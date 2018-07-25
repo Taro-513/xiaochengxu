@@ -1,0 +1,42 @@
+<import src="../../wxParse/wxParse.wxml" />
+<view class="article-content">
+  <text class='title'>{{info.articleTitle}}</text>
+  <view class="author-time">
+    <text class='author' class="{{showAthor?'show':'hidden'}}">来自  {{info.authorName}}</text>
+    <text class='time'>{{updateDate}}</text>
+  </view>
+  <!-- 音频文件 -->
+  <view class="audio-content {{info.audioAddress? 'flex':'hide'}}">
+    <view class='audiostate'>
+      <image src='../../image/btn-bofang1@3x.png' class="tap-play {{playstate}}" data-pid="{{info.pid}}" data-addr="{{info.audioAddress}}" bindtap='audioPlay'></image>
+      <image src='../../image/btn-bofang3@3x.png' class="tap-pause {{stopstate}}" data-pid="{{info.pid}}" data-addr="{{info.audioAddress}}" bindtap='audioPause'></image>
+    </view>
+    <view class='audiocontrol'>
+      <text class='audioTitle'>怎样吃才健康？地中海饮食模式介绍</text>
+       <slider bindchange="sliderchange" min="0" max="100" backgroundColor="#dddddd" activeColor="#50A7F4" block-size="12" block-color="rgba(100,204,253,0.40)" value='{{progress}}'>
+       <text style="left:{{progress-1}}%" class='showSlider?"hide":"show"'></text>
+       </slider>
+      <!-- <view style='position:relative;height:14px;'>
+        <view class="free-MusicProgress">
+          <view class='activebar' style="width:{{progress}}%;"></view>
+        </view>
+        <view class='activepoint' style="left:{{progress-1}}%">
+          <text></text>
+        </view>
+      </view> -->
+
+      <view class='palytime'>
+        <text>{{currentTime}}</text>
+        <text>{{duration}}</text>
+      </view>
+    </view>
+  </view>
+  <audio name="{{info.articleTitle}}" src="{{info.audioAddress}}" id='audio' controls="false" bindtimeupdate="MusicStart" bindended="MusicEnd"></audio>
+  <view class="content wxParse">
+    <template is="wxParse" data="{{wxParseData:article_content.nodes}}" />
+  </view>
+  <view class="readnum">
+    <image src='../../image/icon-eye.png' mode="aspectFit"></image>
+    <text>{{info.initClickCount}}</text>
+  </view>
+</view>

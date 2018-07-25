@@ -1,0 +1,20 @@
+<view class='container'>
+  <ul class='list'>
+  <scroll-view scroll-y="true" class="scoll-h" bindscrolltolower="searchScrollLower" style="height: 600px;">  
+    <li class='items' wx:for="{{list}}" wx:key="{{item.pid}}" data-data="{{item}}"  data-pid="{{item.pid}}" bindtap="bindViewTap">
+    <view class='list-image'>
+        <image src='{{item.picsmall}}'></image>
+      </view>
+      <view class='list-content'>
+        <view class='list-title'>{{item.articleTitle}}</view>
+        <view class='date-readnum'>
+          <text class='date'>{{item.updateDate}}</text>
+          <image src='../../image/icon-eye.png' mode="aspectFit"></image>
+          <text class='readnum'>{{item.clickCount}}</text>
+        </view>
+      </view>
+      
+    </li>
+      </scroll-view>   
+  </ul>
+</view>

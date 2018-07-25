@@ -1,0 +1,14 @@
+{
+  "pages":[
+    "pages/indexlist/indexlist",
+    "pages/index/index",
+    "pages/getinfo/getinfo",
+    "pages/list/list"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "宜糖60秒",
+    "navigationBarTextStyle":"black"
+  }
+}

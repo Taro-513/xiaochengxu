@@ -1,0 +1,52 @@
+.article-content{padding:0.4444rem 4%;}
+.title{font-size: 22px;color: #333333;font-weight: bold;}
+.author-time{font-size: 11px;color: #999999;line-height: 22px;margin-top: 5px;display:flex;
+justify-content:space-between;padding: 0 5px;}
+.content{font-size:17px;color: #333333;letter-spacing: 0;line-height: 30px;text-align: justify}
+.wxParse-p{overflow: hidden;margin: 20px 0;}
+.wxParse-p:first-of-type{margin-top: 5px;}
+.readnum{display: flex;justify-content: flex-end; line-height: 26px;margin-top: 15px;align-items:baseline;}
+.readnum text{font-size: 11px;color: #CCCCCC;}
+.readnum image{width: 20px;height: 12px;vertical-align: middle;}
+.show{visibility: visible;}
+.hidden{visibility: hidden;}
+.wxParse{margin: 0;}
+.commentnum{font-size: 16px;color: #333333;padding: 12px 15px; border-top: 1px solid  #E1E1E1;border-bottom: 1px solid  #E1E1E1;display: block;}
+.arcomment{background: #FFFFFF;padding-bottom: 20px;}
+.comavatar{width: 40px;height: 40px;border-radius: 100%;object-fit: cover;margin-right: 15px;}
+.comcontent{ width:100%; padding: 20px 15px 0;display: inline-block;line-height: 20px;}
+.comcontent text:nth-of-type(1){font-size: 14px;color: #999999;}
+.comcontent .right image{width: 20px;height: 20px;vertical-align: bottom;}
+.right{float: right;position: relative}
+.comcontent text:nth-of-type(2){font-size:14px;color: #333333;margin: 12px 0 12px 55px;}
+.comcontent text:nth-of-type(3){font-size:11px;color: #999999;margin-left: 55px;}
+.comcontent text:nth-of-type(3) span{display: inline-block;margin-right: 17px;}
+.nocomment{background:#FFFFFF ;margin: 0 auto 54px;text-align: center;padding:35px 0 54px;display: none;}
+.nocomment image{width: 12%;}
+.nocomment text{font-size: 15px;color: rgba(0,0,0,0.4);margin-top: 14px;}
+audio{display: none;}
+.audio-content{background: #FAFAFA;width: 92%;height: 100px;border: 1px solid #dddddd;margin: 20px 0;display: flex;align-items: center;flex-direction: row;padding: 0 4%;}
+.tap-pause{display: none;}
+.tap-play.active{display: none;}
+.tap-play.active + .tap-pause{display: block;}
+.audiostate image{width: 48px;height: 48px;margin-right: 12px;}
+.audioTitle{font-size: 15px;}
+.audiocontrol{height: 74%;display: flex;flex-direction: column;justify-content: space-between;padding: 0 8px;}
+.free-MusicProgress{
+  /* position: absolute; */
+  width:100%;
+  background:#dddddd;margin-top: 5px;margin-left: 5px;
+}
+.free-MusicProgress>.activebar{
+  background:#3c9dfe;
+  height:4px;
+}
+.activepoint{ background:#3c9dfe;height:14px;width:14px;border-radius: 100%;background: rgba(100,204,253,0.30);position: absolute;z-index: 999;top: 0;text-align: center;}
+.activepoint text{display: block;width: 6px;height: 6px;background: #50A7F4;border-radius: 100%;cursor: pointer;  position: absolute;margin-top: 4px;margin-left: 4px;}
+.palytime{display: flex;justify-content: space-between;align-items: center; font-size: 11px;color: #999;}
+.hide{display: none;}
+.show{display: block;}
+slider{width: 100%;margin: 0;position: relative;}
+slider text{display: block;width: 6px;height: 6px;background: #50A7F4;border-radius: 100%;cursor: pointer;  position: absolute;left: -3px;top: 6px;}
+.flex{display: flex;}
+.wxParse-span.wxParse-inline{font-size: 17px!important;}

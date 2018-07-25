@@ -1,0 +1,123 @@
+<view>
+  <scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}">
+    <view class="tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="swichNav">宜糖60秒</view>
+    <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="swichNav">抗糖攻略</view>
+    <view class="tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="swichNav">饮食与运动</view>
+    <view class="tab-item {{currentTab==3?'active':''}}" data-current="3" bindtap="swichNav">糖友心情</view>
+    <view class="tab-item {{currentTab==4?'active':''}}" data-current="4" bindtap="swichNav">并发症专区</view>
+  </scroll-view>
+
+  <swiper class="tab-content {{defaultbg?'hide':'show'}}" current="{{currentTab}}" duration="300" bindchange="switchTab" style="height:{{winHeight}}rpx">
+    <!-- 宜糖60秒 -->
+    <!-- <web-view src="https://a.app.qq.com/o/simple.jsp?pkgname=com.tianmai.etang">跳转应用宝</web-view> -->
+    <swiper-item>
+      <scroll-view scroll-y="true" class="scoll-h list audiolist" bindscrolltolower="searchScrollLower" style="height: 600px;">
+        <view class='items' wx:for="{{list0}}" wx:key="{{item.pid}}" data-data="{{item}}" data-pid="{{item.pid}}">
+          <!-- <view class='list-image'> -->
+          <!-- <image src='{{item.picsmall}}'></image> -->
+          <!-- </view> -->
+          <view class='list-content foraudio'>
+            <view class='view-audio'>
+              <image src='../../image/btn-bofang1@3x.png' class="tap-play {{item.pid==playstate?'active':''}}" data-pid="{{item.pid}}" data-addr="{{item.audioAddress}}" bindtap='audioPlay'></image>
+              <image src='../../image/btn-bofang3@3x.png' class="tap-pause" data-pid="{{item.pid}}" data-addr="{{item.audioAddress}}" bindtap='audioPause'></image>
+              <audio name="{{item.articleTitle}}" src="{{item.audioAddress}}" data-id="{{item.pid}}" controls bindended="endEvent"></audio>
+            </view>
+            <view>
+              <view class='list-title'>{{item.articleTitle}}</view>
+              <view class='date-readnum'>
+                <text class='date'>{{item.updateDate}}</text>
+                <image src='../../image/icon_listen@3x.png' mode="aspectFit"></image>
+                <text class='readnum'>{{item.clickCount}}</text>
+              </view>
+            </view>
+          </view>
+          <view class='audioimg' bindtap="bindViewTap" data-pid="{{item.pid}}">
+            <image src='../../image/icon_chakan@3x.png'></image>
+            <text class='yuanwen'>原文</text>
+          </view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+    <!-- 抗糖攻略 -->
+    <swiper-item>
+      <scroll-view scroll-y="true" class="scoll-h list" bindscrolltolower="searchScrollLower" style="height: 600px;">
+        <view class='items' wx:for="{{list1}}" wx:key="{{item.pid}}" data-data="{{item}}" data-pid="{{item.pid}}" bindtap="bindViewTap">
+          <view class='list-image'>
+            <image src='{{item.picsmall}}'></image>
+          </view>
+          <view class='list-content'>
+            <view class='list-title'>{{item.articleTitle}}</view>
+            <view class='date-readnum'>
+              <text class='date'>{{item.updateDate}}</text>
+              <image src='../../image/icon-eye.png' mode="aspectFit"></image>
+              <text class='readnum'>{{item.clickCount}}</text>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+    <!-- 饮食与记录 -->
+    <swiper-item>
+      <scroll-view scroll-y="true" class="scoll-h list" bindscrolltolower="searchScrollLower" style="height: 600px;">
+        <view class='items' wx:for="{{list2}}" wx:key="{{item.pid}}" data-data="{{item}}" data-pid="{{item.pid}}" bindtap="bindViewTap">
+          <view class='list-image'>
+            <image src='{{item.picsmall}}'></image>
+          </view>
+          <view class='list-content'>
+            <view class='list-title'>{{item.articleTitle}}</view>
+            <view class='date-readnum'>
+              <text class='date'>{{item.updateDate}}</text>
+              <image src='../../image/icon-eye.png' mode="aspectFit"></image>
+              <text class='readnum'>{{item.clickCount}}</text>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+    <!--  糖友心情 -->
+    <swiper-item>
+      <scroll-view scroll-y="true" class="scoll-h list" bindscrolltolower="searchScrollLower" style="height: 600px;">
+        <view class='items' wx:for="{{list3}}" wx:key="{{item.pid}}" data-data="{{item}}" data-pid="{{item.pid}}" bindtap="bindViewTap">
+          <view class='list-image'>
+            <image src='{{item.picsmall}}'></image>
+          </view>
+          <view class='list-content'>
+            <view class='list-title'>{{item.articleTitle}}</view>
+            <view class='date-readnum'>
+              <text class='date'>{{item.updateDate}}</text>
+              <image src='../../image/icon-eye.png' mode="aspectFit"></image>
+              <text class='readnum'>{{item.clickCount}}</text>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+    <!-- 并发症 -->
+    <swiper-item>
+      <scroll-view scroll-y="true" class="scoll-h list" bindscrolltolower="searchScrollLower" style="height: 600px;">
+        <view class='items' wx:for="{{list4}}" wx:key="{{item.pid}}" data-data="{{item}}" data-pid="{{item.pid}}" bindtap="bindViewTap">
+          <view class='list-image'>
+            <image src='{{item.picsmall}}'></image>
+          </view>
+          <view class='list-content'>
+            <view class='list-title'>{{item.articleTitle}}</view>
+            <view class='date-readnum'>
+              <text class='date'>{{item.updateDate}}</text>
+              <image src='../../image/icon-eye.png' mode="aspectFit"></image>
+              <text class='readnum'>{{item.clickCount}}</text>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+<view class='loadfailed {{defaultbg?"show":"hide"}}'>
+        <view>
+          <image src='../../image/loadfailed.png'></image>
+          <text>从前有座山，山里没信号</text>
+        </view>
+        <view>
+          <button type="default">点击刷新</button>
+        </view>
+      </view>
+</view>
